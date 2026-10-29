@@ -1,0 +1,8 @@
+---
+layout: page
+title: Talks & Media
+kicker: ACADEMIC ACTIVITIES
+intro: Presentations, media contributions and public talks.
+permalink: /talks/
+---
+{% assign items = site.talks | where: 'published', true | sort: 'date' | reverse %}{% if items.size > 0 %}<div class="record-list">{% for x in items %}<a class="record-line" href="{{ x.url | relative_url }}"><div><small>{% if x.date %}{{ x.date | date: '%d %B %Y' }}{% elsif x.year %}{{ x.year }}{% elsif x.semester %}{{ x.semester | escape }}{% elsif x.status %}{{ x.status | escape }}{% endif %}</small><strong>{{ x.title | escape }}</strong>{% if x.summary %}<p>{{ x.summary | escape }}</p>{% endif %}</div><span>↗</span></a>{% endfor %}</div>{% else %}{% include empty.html title="Verified details will be added here when available." %}{% endif %}

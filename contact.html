@@ -1,0 +1,8 @@
+---
+layout: page
+title: Contact
+kicker: GET IN TOUCH
+intro: Contact Dr. Alireza Jalali for academic correspondence and research collaboration.
+permalink: /contact/
+---
+<div class="contact-grid"><div class="contact-card"><span>EMAIL</span><h2>Academic correspondence</h2><a href="mailto:{{ site.data.site.email | escape }}">{{ site.data.site.email | escape }} ↗</a><p>{{ site.data.site.contact_note | escape }}</p></div><div class="contact-card"><span>INSTITUTION</span><h2>{{ site.data.site.university | escape }}</h2><p>{{ site.data.site.department | escape }}<br>{{ site.data.site.college | escape }}<br>{{ site.data.site.city | escape }}</p><a href="{{ site.data.site.institution_url }}" target="_blank" rel="noopener noreferrer">University website ↗</a></div><div class="contact-card"><span>ACADEMIC PROFILES</span><h2>Find the research</h2><a href="{{ site.data.site.scholar_url }}" target="_blank" rel="noopener noreferrer">Google Scholar ↗</a>{% if site.data.site.orcid_url and site.data.site.orcid_url != '' %}<a href="{{ site.data.site.orcid_url }}" target="_blank" rel="noopener noreferrer">ORCID ↗</a>{% endif %}</div></div>

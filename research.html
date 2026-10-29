@@ -1,0 +1,8 @@
+---
+layout: page
+title: Research, projects and methods
+kicker: RESEARCH PROFILE
+intro: Water treatment, purification and desalination research, informed by fluid mechanics, numerical modeling and system optimization.
+permalink: /research/
+---
+{% assign areas = site.areas | where: 'published', true | sort: 'order' %}<section class="text-block"><h2>Research vision</h2><p>{{ site.data.about.research_statement | escape }}</p></section><section class="inner-section"><div class="inner-heading"><h2>Research interests</h2><p>The core themes represented in published work and academic research interests.</p></div><div class="interest-grid">{% for a in areas %}<a href="{{ a.url | relative_url }}" class="interest-card"><span class="num-label">0{{ forloop.index }}</span><h3>{{ a.title | escape }}</h3><p>{{ a.summary | escape }}</p><span class="interest-arrow">↗</span></a>{% endfor %}</div></section><section class="inner-section"><div class="inner-heading"><h2>Research projects</h2><p>Verified projects and activities of the laboratory.</p></div>{% assign projects = site.projects | where: 'published', true %}{% if projects.size > 0 %}<div class="record-list">{% for x in projects %}<a class="record-line" href="{{ x.url | relative_url }}"><strong>{{ x.title | escape }}</strong><span>{{ x.status | escape }} ↗</span></a>{% endfor %}</div>{% else %}{% include empty.html title="Project records will be added after verification." %}{% endif %}<p><a class="section-more" href="{{ '/projects/' | relative_url }}">Research projects →</a></p></section>

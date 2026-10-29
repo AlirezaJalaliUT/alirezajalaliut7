@@ -1,0 +1,8 @@
+---
+layout: page
+title: News & Updates
+kicker: LATEST NEWS
+intro: Laboratory announcements, academic news and updates.
+permalink: /news/
+---
+{% assign items = site.news | where: 'published', true | sort: 'date' | reverse %}{% if items.size > 0 %}<div class="record-list">{% for x in items %}<a class="record-line" href="{{ x.url | relative_url }}"><div><small>{% if x.date %}{{ x.date | date: '%d %B %Y' }}{% elsif x.year %}{{ x.year }}{% elsif x.semester %}{{ x.semester | escape }}{% elsif x.status %}{{ x.status | escape }}{% endif %}</small><strong>{{ x.title | escape }}</strong>{% if x.summary %}<p>{{ x.summary | escape }}</p>{% endif %}</div><span>↗</span></a>{% endfor %}</div>{% else %}{% include empty.html title="Verified details will be added here when available." %}{% endif %}

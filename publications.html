@@ -1,0 +1,10 @@
+---
+layout: page
+title: Selected publications
+kicker: RESEARCH PAPERS
+intro: Selected peer-reviewed publications from Dr. Alireza Jalali. For an extended record, see Google Scholar.
+permalink: /publications/
+---
+{% assign papers = site.publications | where: 'published', true | sort: 'year' | reverse %}
+<div class="publication-controls"><label>Search publications<input id="publication-search" type="search" placeholder="Title, author, venue or year" autocomplete="off"></label><div class="filter-caption">Publication year</div><div class="year-filters" aria-label="Filter by year"><button class="year-btn is-active" data-year="all" type="button" aria-pressed="true">All years</button>{% assign prev_year = '' %}{% for p in papers %}{% assign current_year = p.year | append: '' %}{% if prev_year != current_year %}<button class="year-btn" data-year="{{ p.year }}" type="button" aria-pressed="false">{{ p.year }}</button>{% assign prev_year = current_year %}{% endif %}{% endfor %}</div><p id="publication-status" class="filter-status" role="status">{{ papers.size }} selected publications</p></div>
+<div class="paper-list" id="paper-list">{% for paper in papers %}{% include paper.html paper=paper %}{% endfor %}</div><p id="paper-no-results" class="hidden-state" hidden>No publications match your search.</p><p class="scholar-panel">For a more complete publication history, visit <a href="{{ site.data.site.scholar_url }}" target="_blank" rel="noopener noreferrer">Google Scholar ↗</a>.</p>

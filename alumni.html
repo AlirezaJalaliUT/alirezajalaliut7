@@ -1,0 +1,8 @@
+---
+layout: page
+title: Alumni
+kicker: FORMER GROUP MEMBERS
+intro: Former students and researchers affiliated with the laboratory.
+permalink: /alumni/
+---
+{% assign items = site.people | where: 'published', true | where: 'alumni', true | sort: 'order' %}{% if items.size > 0 %}<div class="record-list">{% for x in items %}<a class="record-line" href="{{ x.url | relative_url }}"><div><strong>{{ x.title | escape }}</strong><p>{{ x.role | escape }}</p></div><span>↗</span></a>{% endfor %}</div>{% else %}{% include empty.html title="Verified alumni information will be published here." %}{% endif %}

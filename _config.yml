@@ -1,0 +1,93 @@
+title: Dr. Alireza Jalali | Design Studio Edition
+description: Explore the academic profile and research of Dr. Alireza Jalali, University
+  of Tehran, in a customizable design preview.
+url: https://alirezajalaliut.github.io
+baseurl: /alirezajalaliut7
+lang: en
+timezone: Asia/Tehran
+markdown: kramdown
+permalink: pretty
+exclude:
+- README.md
+- README_FA.md
+- SOURCES_AND_FACT_CHECK.md
+- .pages.yml
+- Gemfile
+- Gemfile.lock
+- vendor
+- node_modules
+- scripts
+collections:
+  areas:
+    output: true
+    permalink: /research/:name/
+  projects:
+    output: true
+    permalink: /projects/:name/
+  publications:
+    output: true
+    permalink: /publications/:name/
+  people:
+    output: true
+    permalink: /people/:name/
+  positions:
+    output: true
+    permalink: /positions/:name/
+  news:
+    output: true
+    permalink: /news/:name/
+  teaching:
+    output: true
+    permalink: /teaching/:name/
+  awards:
+    output: true
+    permalink: /awards/:name/
+  talks:
+    output: true
+    permalink: /talks/:name/
+defaults:
+- scope:
+    path: ''
+    type: areas
+  values:
+    layout: detail
+- scope:
+    path: ''
+    type: projects
+  values:
+    layout: detail
+- scope:
+    path: ''
+    type: publications
+  values:
+    layout: detail
+- scope:
+    path: ''
+    type: people
+  values:
+    layout: detail
+- scope:
+    path: ''
+    type: positions
+  values:
+    layout: detail
+- scope:
+    path: ''
+    type: news
+  values:
+    layout: detail
+- scope:
+    path: ''
+    type: teaching
+  values:
+    layout: detail
+- scope:
+    path: ''
+    type: awards
+  values:
+    layout: detail
+- scope:
+    path: ''
+    type: talks
+  values:
+    layout: detail

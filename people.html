@@ -1,0 +1,9 @@
+---
+layout: page
+title: Our Team
+kicker: PEOPLE
+intro: Researchers and students of the Water Treatment Laboratory, University of Tehran.
+permalink: /people/
+---
+<div class="join-banner"><div><h2>The research group</h2><p>Our work covers water treatment, desalination, purification and related computational engineering.</p></div><a class="button button-primary" href="{{ '/positions/' | relative_url }}">Open Positions ↗</a></div>
+{% assign people = site.people | where: 'published', true | where: 'alumni', false | sort: 'order' %}{% if people.size > 0 %}<div class="people-grid">{% for person in people %}<a href="{{ person.url | relative_url }}" class="person-card">{% if person.photo %}<img src="{{ person.photo | relative_url }}" alt="{{ person.title | escape }}" loading="lazy">{% else %}<span class="avatar-letter">{{ person.title | slice: 0, 1 }}</span>{% endif %}<h3>{{ person.title | escape }}</h3><p>{{ person.role | escape }}</p></a>{% endfor %}</div>{% else %}{% include empty.html title="The verified team roster will be published here." %}{% endif %}<a class="section-more" href="{{ '/alumni/' | relative_url }}">Former group members →</a>

@@ -1,0 +1,8 @@
+---
+layout: page
+title: Research Projects
+kicker: LABORATORY WORK
+intro: A record of projects and research activities, published only when the details have been verified.
+permalink: /projects/
+---
+{% assign items = site.projects | where: 'published', true | sort: 'order' %}{% if items.size > 0 %}<div class="record-list">{% for x in items %}<a class="record-line" href="{{ x.url | relative_url }}"><div><small>{{ x.status | escape }}</small><strong>{{ x.title | escape }}</strong><p>{{ x.summary | escape }}</p></div><span>↗</span></a>{% endfor %}</div>{% else %}{% include empty.html title="Verified project details will be published here." %}{% endif %}

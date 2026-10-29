@@ -1,0 +1,8 @@
+---
+layout: page
+title: About the Professor
+kicker: ACADEMIC PROFILE
+intro: Academic background, research interests and selected work.
+permalink: /about/
+---
+<div class="profile-layout"><figure class="profile-portrait"><img src="{{ site.data.site.professor_photo | relative_url }}" alt="Dr. Alireza Jalali" loading="lazy"></figure><div class="prose"><h2>{{ site.data.site.professor_name | escape }}</h2><p class="profile-role">{{ site.data.site.professor_title | escape }} · {{ site.data.site.department | escape }} · {{ site.data.site.university | escape }}</p><p class="lead">{{ site.data.about.lead | escape }}</p><p>{{ site.data.about.body | escape | newline_to_br }}</p><h2>Research interests</h2><p>{{ site.data.about.research_statement | escape }}</p>{% if site.data.about.education and site.data.about.education != '' %}<h2>Education and appointments</h2><p>{{ site.data.about.education | escape | newline_to_br }}</p>{% endif %}<div class="action-line"><a href="{{ '/research/' | relative_url }}">Research areas ↗</a><a href="{{ site.data.site.scholar_url }}" target="_blank" rel="noopener noreferrer">Google Scholar ↗</a>{% if site.data.site.cv_url and site.data.site.cv_url != '' %}<a href="{{ site.data.site.cv_url | relative_url }}">Academic CV ↗</a>{% endif %}</div></div></div>
